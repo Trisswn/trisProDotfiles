@@ -1,0 +1,32 @@
+[general]
+# Velocidad de los cuadros (puedes subirlo si tienes buena PC)
+framerate = 60
+# Sensibilidad automática
+autosens = 1
+# Barras (0 = automático según el ancho de la terminal)
+bars = 0
+
+[input]
+# Importante: Si usas Pipewire, deja esto así. Si usas PulseAudio, cambia a 'pulse'.
+method = pipewire
+source = auto
+
+[output]
+method = ncurses
+
+[color]
+# Habilitamos el gradiente
+gradient = 1
+gradient_count = 6
+
+# Pywal rellenará esto automáticamente:
+gradient_color_1 = '{color1}'
+gradient_color_2 = '{color2}'
+gradient_color_3 = '{color3}'
+gradient_color_4 = '{color4}'
+gradient_color_5 = '{color5}'
+gradient_color_6 = '{color6}'
+
+# Fondo transparente (opcional, cámbialo a '{background}' si quieres fondo sólido)
+background = default 
+foreground = '{foreground}'
