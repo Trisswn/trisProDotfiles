@@ -1,0 +1,34 @@
+@import "../../.cache/wal/colors-wofi.css";
+
+window {
+    margin: 0px;
+    border: 2px solid @color1;
+    background-color: @background;
+    font-family: "JetBrainsMono Nerd Font";
+    font-size: 14px;
+}
+
+#input {
+    margin: 5px;
+    border: none;
+    color: @foreground;
+    background-color: @color2;
+}
+
+#inner-box {
+    margin: 5px;
+    background-color: @background;
+}
+
+#text {
+    margin: 5px;
+    color: @foreground;
+}
+
+#entry:selected {
+    background-color: @color1;
+}
+
+#text:selected {
+    color: @background;
+}

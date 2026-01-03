@@ -1,3 +1,5 @@
+fastfetch
+typeset -g POWERLEVEL9K_INSTANT_PROMPT=quiet
 # =====================
 # Powerlevel10k Instant Prompt
 # =====================
@@ -49,9 +51,6 @@ ZSH_HIGHLIGHT_STYLES[precommand]='fg=#f9e2af,bold'
 # =====================
 alias grabaciones='dbus-launch nautilus --no-desktop ~/Videos'
 
-alias power2='powerprofilesctl set balanced && powerprofilesctl | grep "^\*"'
-alias power3='powerprofilesctl set performance && powerprofilesctl | grep "^\*"'
-alias power1='powerprofilesctl set power-saver && powerprofilesctl | grep "^\*"'
 
 # yt-dlp aliases simples
 alias ytvid='yt-dlp -f "bv*+ba/b"'
@@ -65,6 +64,14 @@ alias keybinds='nvim ~/.config/hypr/configs/keybinds.conf'
 alias back1='cd ..'
 alias back2='cd ../..'
 alias home='cd ~/'
+alias winrules='nvim /home/trisswn/.config/hypr/configs/windowrules.conf'
+alias refterm='source ~/.zshrc'
+alias fastconfig='nvim ~/.config/fastfetch/config.jsonc '
+alias powermode='~/bin/power-mode.sh'
+alias colores='for i in {0..15}; do
+  printf "\e[48;5;%sm  color%-2d  \e[0m\n" "$i" "$i"
+done
+'
 
 # =====================
 # Manjaro Zsh Config (opcional, si quieres mantenerlo)
@@ -79,3 +86,7 @@ fi
 USE_POWERLINE="true"
 HAS_WIDECHARS="false"
 
+
+
+# User local binaries
+export PATH="$HOME/.local/bin:$PATH"
