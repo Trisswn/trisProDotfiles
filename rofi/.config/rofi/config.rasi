@@ -141,6 +141,7 @@ element {
 element normal.normal {
     background-color:            inherit;
     text-color:                  inherit;
+
 }
 element normal.urgent {
     background-color:            @urgent-background;

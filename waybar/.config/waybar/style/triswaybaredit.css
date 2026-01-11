@@ -12,7 +12,7 @@ window#waybar{
 .modules-left {
     padding:7px;
     margin:7 0 5 10;
-    border-radius:10px;
+    border-radius:15px;
     background: alpha(@background,.6);
     color: @secondary;
     box-shadow: 0px 0px 2px rgba(0, 0, 0, .6);
@@ -20,14 +20,14 @@ window#waybar{
 .modules-center {
     padding:3px;
     margin:7 0 5 0;
-    border-radius:10px;
+    border-radius:15px;
     background: alpha(@background,.6);
     box-shadow: 0px 0px 2px rgba(0, 0, 0, .6);
 }
 .modules-right {
     padding:7px;
     margin: 7 10 5 0;
-    border-radius:10px;
+    border-radius:15px;
     background: alpha(@background,.6);
     box-shadow: 0px 0px 2px rgba(0, 0, 0, .6);
 }
@@ -35,9 +35,9 @@ tooltip {
     background:@background;
     color: @color7;
 }
-#clock:hover, #custom-pacman:hover, #custom-notification:hover,#bluetooth:hover,#network:hover,#battery:hover, #cpu:hover,#memory:hover,#temperature:hover{
+#clock:hover, #custom-menu:hover, #wireplumber:hover, #idle_inhibitor:hover, #custom-power:hover, #custom-cava:hover, #mpris:hover, #custom-pacman:hover, #custom-notification:hover,#bluetooth:hover,#network:hover,#battery:hover, #cpu:hover,#memory:hover,#temperature:hover{
     transition: all .3s ease;
-    color:@color9;
+    color:@color4;
 }
 #custom-notification {
     padding: 0px 5px;
@@ -61,33 +61,33 @@ tooltip {
 #workspaces button {
     all:unset;
     padding: 0px 4px;
-    color: @outline;
+    color: @color7;
     transition: all .2s ease;
 }
 #workspaces button:hover {
-    color:rgba(0,0,0,0);
+    color: @color4;
     border: none;
-    text-shadow: 0px 0px 1.5px rgba(0, 0, 0, .5);
+   
     transition: all 1s ease;
 }
 #workspaces button.active {
-    color: @color9;
+    color: @color4;
     border: none;
     text-shadow: 0px 0px 2px rgba(0, 0, 0, .5);
 }
 #workspaces button.empty {
-    color: @outline;
+    color: @color7;
     border: none;
     text-shadow: 0px 0px 1.5px rgba(0, 0, 0, .2);
 }
 #workspaces button.empty:hover {
-    color: rgba(0,0,0,0);
+    color: @color4;
     border: none;
-    text-shadow: 0px 0px 1.5px rgba(0, 0, 0, .5);
+   
     transition: all 1s ease;
 }
 #workspaces button.empty.active {
-    color: @color9;
+    color: @color4;
     border: none;
     text-shadow: 0px 0px 2px rgba(0, 0, 0, .5);
 }
@@ -132,25 +132,25 @@ tooltip {
 }
 #custom-expand{
     padding: 0px 5px;
-    color:alpha(@foreground,.2);
+    color:@color7;
     text-shadow: 0px 0px 2px rgba(0, 0, 0, .7);
     transition: all .3s ease; 
 }
 #custom-expand:hover{
-    color:rgba(255,255,255,.2);
-    text-shadow: 0px 0px 2px rgba(255, 255, 255, .5);
+    color:@color4;
+    text-shadow: 0px 0px 2px rgba(0, 0, 0, .5);
 }
 #custom-colorpicker{
     padding: 0px 5px;
 }
-#cpu,#memory,#temperature{
+#cpu,#memory,#temperature,#idle_inhibitor,#wireplumber{
     padding: 0px 5px;
     transition: all .3s ease; 
     color:@color7;
 
 }
 #custom-endpoint{
-    color:transparent;
+    color:@color4;
     text-shadow: 0px 0px 1.5px rgba(0, 0, 0, 1);
 
 }
@@ -178,4 +178,47 @@ tooltip {
     background-color: alpha(@background, 0); 
     border-radius: 10px;
 }
+
+#custom-separador{
+    padding: 0px 5px;
+    transition: all .3s ease;
+    color:@color7;
+
+}
+
+#mpris{
+    padding: 0px 5px;
+    transition: all .3s ease;
+    color:@color7;
+
+}
+
+
+#cava{
+    padding: 0px 5px;
+    transition: all .3s ease;
+    color:@color8;
+
+}
+
+#custom-power{
+    padding: 0px 5px;
+    transition: all .3s ease;
+    color:@color7;
+
+}
+
+/* Transición suave */
+#custom-cava {
+  transition: opacity 0.25s ease;
+}
+
+#custom-menu{
+    padding: 0px 5px;
+    transition: all .3s ease;
+    color:@color7;
+
+}
+
+
 

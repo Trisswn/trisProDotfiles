@@ -57,7 +57,7 @@ alias ytvid='yt-dlp -f "bv*+ba/b"'
 alias ytmp3='yt-dlp -x --audio-format mp3 --audio-quality 0 --embed-thumbnail --add-metadata'
 alias ytalbum='yt-dlp -x --audio-format mp3 --audio-quality 0 --embed-thumbnail --add-metadata --parse-metadata "playlist_title:%(album)s" --parse-metadata "uploader:%(albumartist)s" -o "%(playlist_title)s/%(playlist_index)02d - %(title)s.%(ext)s"'
 
-alias hz='~/toggle-hz.sh'
+alias hyprconf='nvim .config/hypr/hyprland.conf'
 
 alias cmd-config='nvim ~/.zshrc'
 alias keybinds='nvim ~/.config/hypr/configs/keybinds.conf'
@@ -70,8 +70,11 @@ alias fastconfig='nvim ~/.config/fastfetch/config.jsonc '
 alias powermode='~/bin/power-mode.sh'
 alias colores='for i in {0..15}; do
   printf "\e[48;5;%sm  color%-2d  \e[0m\n" "$i" "$i"
-done
-'
+done'
+alias looknfeel='nvim ~/.config/hypr/configs/looknfeel.conf'
+alias configs='cd ~/.config/hypr'
+alias performance='sudo auto-cpufreq --force performance'
+alias powersave='sudo auto-cpufreq --force powersave'
 
 # =====================
 # Manjaro Zsh Config (opcional, si quieres mantenerlo)

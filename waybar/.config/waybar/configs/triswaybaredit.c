@@ -2,9 +2,9 @@
         "layer": "top",
         "position": "top",
         "reload_style_on_change": true,
-        "modules-left": ["custom/notification", "tray", "clock"],
-        "modules-center": ["hyprland/workspaces#kanji"],
-        "modules-right": [ "mpris", "custom/separador", "battery"],
+        "modules-left": ["custom/notification", "bluetooth", "network", "group/expand", "hyprland/workspaces#kanji"],
+        "modules-center": ["clock"],
+        "modules-right": [ "custom/cava", "mpris", "battery", "custom/power"],
 
 
         "hyprland/workspaces": {
@@ -25,7 +25,7 @@
             "escape": true
         },
         "clock": {
-            "format": "{:%I:%M %p} ",
+            "format": "{:%I:%M %p}",
             "interval": 60,   
             "tooltip-format": "<tt>{calendar}</tt>",
             "calendar": {
@@ -60,15 +60,15 @@
             "on-click-right": "blueman-manager",
         }, 
         "battery": {
-            "interval":30,
+            "interval":5,
             "states": {
                 "good": 95,
                 "warning": 30,
                 "critical": 20
             },
-            "format": "{capacity}% {icon}",
-            "format-charging": "{capacity}% 󰂄",
-            "format-plugged": "{capacity}% 󰂄 ",
+            "format": "{icon} {capacity}%",
+            "format-charging": " {capacity}%",
+            "format-plugged": " {capacity}%",
             "format-alt": "{time} {icon}",
             "format-icons": [
                 "󰁻",
@@ -80,11 +80,11 @@
             ],
         },
        "custom/expand": {
-            "format": "",
+            "format": "",
             "tooltip": false
         },
         "custom/endpoint":{
-            "format": "|",
+            "format": " | ",
             "tooltip": false
         },
         "group/expand": {
@@ -94,7 +94,7 @@
                 "transition-to-left": true,
                 "click-to-reveal": true
             },
-            "modules": ["custom/expand", "custom/colorpicker","cpu","memory","temperature","custom/endpoint"],
+            "modules": ["custom/expand", "idle_inhibitor","custom/menu","custom/endpoint"],
         },
         "custom/colorpicker": {
             "format": "{}",
@@ -104,17 +104,22 @@
             "on-click": "~/.config/waybar/scripts/colorpicker.sh",
             "signal": 1
         },
-        "cpu": {
-            "format": "󰻠",
-            "tooltip": true
+        
+         "cpu": {
+          	"format": "{usage}% 󰍛",
+        	  "interval": 1,
+        	  "min-length": 5,
+        	  "format-alt-click": "click",
+	          "format-alt": "{icon0}{icon1}{icon2}{icon3} {usage:>2}% 󰍛",
+        	  "format-icons": [
+        		"▁", "▂", "▃", "▄", "▅", "▆", "▇", "█"
+	          ],
+	          "on-click-right": "gnome-system-monitor",
         },
         "memory": {
             "format": ""
         },
-        "temperature": {
-            "critical-threshold": 80,
-            "format": "",
-        },
+
         "tray": {
             "icon-size": 14,
             "spacing": 10
@@ -150,7 +155,7 @@
 	},
 	"dynamic-order": ["artist", "title"],
 	"ignored-players": ["firefox", "zen"],
-	"max-length": 50,
+	"max-length": 43,
 	
 	    "on-click": "playerctl play-pause",
 	    "on-click-right": "playerctl next",
@@ -168,13 +173,7 @@
 	    "interval": "once",
 	    "tooltip": false
   },
-    "custom/cava": {
-    "exec": "~/.config/waybar/cava.sh",
-    "format": "{}",
-    "return-type": "text",
-    "interval": 1,
-    "tooltip": false
-    },
+
 "hyprland/workspaces#kanji": {
 	"disable-scroll": true,
 	"show-special": false,
@@ -208,8 +207,124 @@
 	],
 },
 
+  "cava": {
+        // "cava_config": "$XDG_CONFIG_HOME/cava/cava.conf",
+        "framerate": 30,
+        "autosens": 0,
+        "sensitivity": 15,
+        "bars": 10,
+        "lower_cutoff_freq": 120,
+        "higher_cutoff_freq": 6000,
+        "hide_on_silence": false,
+        //"format_silent": "quiet",
+        "method": "pipewire",
+        "source": "auto",
+        "stereo": true,
+        "reverse": false,
+        "bar_delimiter": 0,
+        "monstercat": false,
+        "waves": false,
+        "noise_reduction": 0.77,
+        "input_delay": 2,
+        "format-icons": ["▁", "▂", "▃", "▄", "▅", "▆", "▇", "█" ],
+        "actions": {
+                   "on-click-right": "mode"
+                   }
+    },
 
+   "custom/power": {
+	  "format": "⏻",
+	  "on-click": "$HOME/.config/hypr/scripts/Wlogout.sh",
+	  "on-click-right": "$HOME/.config/hypr/scripts/ChangeBlur.sh",
+	  "tooltip": true,
+	  "tooltip-format":"Logout Menu",
+},
+
+
+
+
+"custom/cava": {
+  "exec": "~/.config/waybar/scripts/cava-smart.sh",
+  "format": "{}",
+  "tooltip": false
+},
+
+"idle_inhibitor": {
+	"tooltip": true,
+	"tooltip-format-activated": "Idle_inhibitor active",
+	"tooltip-format-deactivated": "Idle_inhibitor not active",
+	"format": "{icon}",
+	"format-icons": {
+		"activated": "",
+		"deactivated": "",
+	}
+},
+  "temperature": {
+	"interval": 10,
+	"tooltip": true,
+	"hwmon-path": [
+		"/sys/class/hwmon/hwmon1/temp1_input",
+		"/sys/class/thermal/thermal_zone0/temp"
+	],
+	//"thermal-zone": 0,
+	"critical-threshold": 82,
+	"format-critical": "{icon} {temperatureC}°C",
+	"format": "{icon} {temperatureC}°C",
+	"format-icons": [
+		"󰈸"
+	],
+	"on-click-right": "$HOME/.config/hypr/scripts/WaybarScripts.sh --nvtop"
+},
+"backlight": {
+	"interval": 2,
+	"align": 0,
+	"rotate": 0,
+	//"format": "{icon} {percent}%",
+	"format-icons": [
+		" ",
+		" ",
+		" ",
+		"󰃝 ",
+		"󰃞 ",
+		"󰃟 ",
+		"󰃠 "
+	],
+	"format": "{icon}",
+	//"format-icons": ["","","","","","","","","","","","","","",""],
+	"tooltip-format": "backlight {percent}%",
+	"icon-size": 10,
+	"on-click": "",
+	"on-click-middle": "",
+	"on-click-right": "",
+	"on-update": "",
+	"on-scroll-up": "$HOME/.config/hypr/scripts/Brightness.sh --inc",
+	"on-scroll-down": "$HOME/.config/hypr/scripts/Brightness.sh --dec",
+	"smooth-scrolling-threshold": 1,
+},
+  "wlr/taskbar": {
+	"format": "{icon} {name}",
+	"icon-size": 13,
+	"all-outputs": false,
+	"tooltip-format": "{title}",
+	"on-click": "activate",
+	"on-click-middle": "close",
+	"ignore-list": [
+		"wofi",
+		"rofi",
+		"kitty",
+    "kitty-dropterm"
+		],
+},
+"custom/menu": {
+	"format": "",
+	"on-click": "pkill rofi || rofi -show drun -modi run,drun,filebrowser,window",
+	"on-click-middle": "$HOME/.config/hypr/scripts/WaybarLayout.sh",
+	"on-click-right": "$HOME/.config/hypr/scripts/wppicker.sh",
+	"tooltip": true,
+	"tooltip-format": "Left Click: Rofi Menu\nMiddle Click: Wallpaper Menu\nRight Click: Waybar Layout Menu",
+},
 
  
-} 
+}
+
 
