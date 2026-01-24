@@ -46,6 +46,7 @@
 "group/custom_right": {
 	"orientation": "horizontal",
 	"modules": [
+    "idle_inhibitor",
 		"bluetooth",
     "network",
 
@@ -92,12 +93,16 @@
 },
 
 "idle_inhibitor": {
+	"tooltip": true,
+	"tooltip-format-activated": "Idle_inhibitor active",
+	"tooltip-format-deactivated": "Idle_inhibitor not active",
 	"format": "{icon}",
 	"format-icons": {
-		"activated": " ",
-		"deactivated": " ",
+		"activated": "",
+		"deactivated": "",
 	}
 },
+
 
 "mppris": {
 	"interval": 10,
@@ -159,7 +164,7 @@
 		"stopped": "",
 	},
 	"dynamic-order": ["artist", "title"],
-	"ignored-players": ["firefox", "zen"],
+	"ignored-players": ["firefox"],
 	"max-length": 43,
 	
 	   "on-click": "playerctl play-pause",

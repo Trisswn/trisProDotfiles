@@ -1,12 +1,12 @@
 {
   "layer": "top",
-  "position": "top",
+  "position": "bottom",
   "height" : 37,
-  "width" : 1550,
+  "width" : 1600,
   "margin-left": 50,
 "margin-right": 50,
-"margin-top":6,
-"margin-bottom":1,
+"margin-top":0,
+"margin-bottom":0,
 
   "fixed-center": true,
   "reload_style_on_change": true,

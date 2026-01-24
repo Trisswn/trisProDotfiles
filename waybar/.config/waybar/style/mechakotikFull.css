@@ -21,7 +21,7 @@ window#waybar {
 
   /*background: alpha(@background, 0.1);*/
       background: rgba (0, 0, 0, 0.5);
-  border-radius: 7px;
+  border-radius: 0px;
   /*border: 0px solid alpha(@background,0.8);*/
 }
 
@@ -64,7 +64,7 @@ tooltip label {
 #workspaces {
   margin: 4px 4px;
   padding: 0 5 0 5;
-  background:  alpha(lighter(@main-color),0.08);
+  background:  alpha(lighter(@main-color),0.1);
   border-radius: 5px;
 }
 
@@ -92,7 +92,7 @@ tooltip label {
   padding: 0px 6px;
   margin: 4px 2px 4px 2px ;
   color: lighter(@color3);
-  background: alpha(lighter(@main-color),0.08);
+  background: alpha(lighter(@main-color),0.1);
   border-radius: 5px;
 }
 
@@ -150,7 +150,7 @@ tooltip label {
 #custom-power {
   padding: 0px 8px;
   margin: 6px 6px 6px 4px;
-  background: alpha(@color12,0.3);
+  background: alpha(@color12,0.4);
   border-radius: 5px;
   color: lighter(@main-color);
 }
@@ -159,7 +159,7 @@ tooltip label {
 #clock {
   padding: 0px 8px;
   margin: 5px 2px 5px 4px;
-  background: alpha(@color12,0.3);
+  background: alpha(@color12,0.4);
   border-radius: 5px;
   color: lighter(@main-color);
 }
@@ -197,7 +197,7 @@ tooltip label {
 }
 
 #custom-cava {
-    color: lighter(@main-color);
+    color: lighter(@color6);
     font-family: "JetBrainsMono Nerd Font Propo";
     padding: 0px 8px;
     margin: 0px 1px;

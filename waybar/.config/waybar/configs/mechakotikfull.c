@@ -2,10 +2,10 @@
   "layer": "top",
   "position": "top",
   "height" : 37,
-  "width" : 1550,
+  "width" : 1600,
   "margin-left": 50,
 "margin-right": 50,
-"margin-top":6,
+"margin-top":0,
 "margin-bottom":1,
 
   "fixed-center": true,

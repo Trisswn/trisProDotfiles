@@ -15,30 +15,25 @@ configuration {
 }
 
 window {
-    transparency:                "real";
-    location:                    center;
-    anchor:                      center;
-    fullscreen:                  false;
-    width:                       1000px;
-    enabled:                     true;
-    
-    /* CAMBIO: Usamos @color8 directamente para el borde */
-    border:                      2px solid;
-    border-color:                @color8;
-    border-radius:               15px;
-    
-    cursor:                      "default";
-    /* CAMBIO: Fondo usando la variable de Pywal */
-    background-color:            @background;
+    location:      center;
+    anchor:        center;
+    width:         600px;
+    border:        2px solid;
+    border-color:  @color8;
+    border-radius: 20px;
+    transparency: "real";
+    background-color: rgba(0,0,0,0.5);
 }
 
 mainbox {
-    enabled:                     true;
-    spacing:                     0px;
-    background-color:            transparent;
-    orientation:                 horizontal;
-    children:                    [ "imagebox", "listbox" ];
+    enabled:     true;
+    orientation: vertical;
+    spacing:     15px;
+    padding:     20px;
+    background-color: transparent;
+    children:    [ "inputbar", "listview" ];
 }
+
 
 imagebox {
     padding:                     20px;
@@ -62,15 +57,15 @@ dummy {
 }
 
 inputbar {
-    enabled:                     true;
-    spacing:                     10px;
-    padding:                     15px;
-    border-radius:               10px;
-    /* CAMBIO: Fondo sutil para la barra */
-    background-color:            @background;
-    text-color:                  @foreground;
-    children:                    [ "textbox-prompt-colon", "entry" ];
+    padding:       18px;
+    border-radius: 15px;
+    background-color: @background;
+    text-color:    @foreground;
+    border: 2px solid;
+    border-color: @color8;
+    children:      [ "entry" ];
 }
+
 
 textbox-prompt-colon {
     enabled:                     true;
@@ -85,7 +80,7 @@ entry {
     background-color:            inherit;
     text-color:                  inherit;
     cursor:                      text;
-    placeholder:                 "Search";
+    placeholder:                 " Search";
     placeholder-color:           inherit;
 }
 
@@ -114,7 +109,7 @@ button selected {
 listview {
     enabled:                     true;
     columns:                     1;
-    lines:                       8;
+    lines:                       5;
     cycle:                       true;
     dynamic:                     true;
     scrollbar:                   false;

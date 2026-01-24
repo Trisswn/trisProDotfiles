@@ -1,0 +1,158 @@
+* {
+    border: none;
+    border-radius: 0px;
+    font-family: "Iosevka Nerd Font Propo";
+    font-weight: bold;
+    font-size: 14px;
+    min-height: 10px;
+}
+
+@import "colors.css";
+
+
+window#waybar {
+    background: rgba(0,0,0,0);
+    margin-bottom: 0px
+}
+
+tooltip {
+    background: @background;
+    color: @foreground;
+    border-radius: 7px;
+}
+
+/* ───────── Workspaces ───────── */
+
+#workspaces button {
+    box-shadow: none;
+    text-shadow: none;
+    padding: 0px 2px;
+    border-radius: 9px;
+    margin: 3px 0px;
+    color: @foreground;
+}
+
+#workspaces button.active {
+    background: @color7;
+    color: @background;
+    margin: 3px;
+    padding: 0px 12px;
+    transition: all 0.4s cubic-bezier(.55,-0.68,.48,1.682);
+}
+
+#workspaces button:hover {
+    background: @color2;
+    color: @background;
+    transition: all 0.3s cubic-bezier(.55,-0.68,.48,1.682);
+}
+
+/* ───────── Taskbar ───────── */
+
+#taskbar button {
+    box-shadow: none;
+    text-shadow: none;
+    padding: 0px 3px;
+    border-radius: 9px;
+    margin: 3px 0px;
+    color: @foreground;
+}
+
+#taskbar button.active {
+    background: @color1;
+    color: @background;
+    margin: 3px;
+    padding: 0px 12px;
+}
+
+#taskbar button:hover {
+    background: @color2;
+    color: @background;
+}
+
+/* ───────── Tray ───────── */
+
+
+
+#tray menu separator {
+    min-height: 8px;
+}
+
+/* ───────── Modules ───────── */
+#custom-notification,
+#tray
+#network,
+#bluetooth,
+#tray menu *,
+#backlight,
+#battery,
+#bluetooth,
+#custom-cliphist,
+#clock,
+#custom-cpuinfo,
+#cpu,
+#custom-gpuinfo,
+#custom-keybindhint,
+#language,
+#memory,
+#mpris,
+#network,
+#custom-notifications,
+#custom-power,
+#pulseaudio,
+#custom-spotify,
+#taskbar,
+#custom-theme,
+#tray,
+#custom-updates,
+#custom-wallchange,
+#custom-wbar,
+#window,
+#workspaces,
+#custom-l_end,
+#custom-r_end,
+#custom-sl_end,
+#custom-sr_end,
+#custom-rl_end,
+#custom-rr_end {
+    color: @color7;
+    background: alpha(@color0, 0.7);
+    margin: 4px 0px;
+    padding: 0px 5px;
+}
+
+#idle_inhibitor {
+  color: @color7;
+  background: alpha(@color0, 0.7);
+  margin: 4px 0px;
+  padding: 0px 5px;
+  font-size: 12px;
+}
+
+
+/* ───────── Ends / Shapes ───────── */
+
+#custom-r_end {
+    border-radius: 0px 21px 21px 0px;
+    margin-right: 9px;
+}
+
+#custom-l_end {
+    border-radius: 21px 0px 0px 21px;
+    margin-left: 9px;
+}
+
+#custom-sr_end,
+#custom-sl_end {
+    border-radius: 0px;
+    margin: 0px 9px;
+}
+
+#custom-rr_end {
+    border-radius: 0px 7px 7px 0px;
+    margin-right: 9px;
+}
+
+#custom-rl_end {
+    border-radius: 7px 0px 0px 7px;
+    margin-left: 9px;
+}

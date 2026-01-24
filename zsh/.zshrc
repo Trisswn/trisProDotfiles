@@ -53,7 +53,7 @@ alias grabaciones='dbus-launch nautilus --no-desktop ~/Videos'
 
 
 # yt-dlp aliases simples
-alias ytvid='yt-dlp -f "bv*+ba/b"'
+alias ytvid='yt-dlp -f "bv*[height<=1080]+ba/b[height<=1080]"'
 alias ytmp3='yt-dlp -x --audio-format mp3 --audio-quality 0 --embed-thumbnail --add-metadata'
 alias ytalbum='yt-dlp -x --audio-format mp3 --audio-quality 0 --embed-thumbnail --add-metadata --parse-metadata "playlist_title:%(album)s" --parse-metadata "uploader:%(albumartist)s" -o "%(playlist_title)s/%(playlist_index)02d - %(title)s.%(ext)s"'
 
@@ -75,6 +75,10 @@ alias looknfeel='nvim ~/.config/hypr/configs/looknfeel.conf'
 alias configs='cd ~/.config/hypr'
 alias performance='sudo auto-cpufreq --force performance'
 alias powersave='sudo auto-cpufreq --force powersave'
+alias windows='sudo mount -t ntfs-3g /dev/nvme0n1p3 /mnt/windows'
+alias nvim="NVIM_APPNAME=nvchad nvim"
+alias letras='sptlrx --current "bold,#DDE6F0,#56738F" --before "104,faint,italic" --after "104,faint"'
+alias wifi='nmtui'
 
 # =====================
 # Manjaro Zsh Config (opcional, si quieres mantenerlo)
@@ -93,3 +97,4 @@ HAS_WIDECHARS="false"
 
 # User local binaries
 export PATH="$HOME/.local/bin:$PATH"
+alias nautilus='thunar'
