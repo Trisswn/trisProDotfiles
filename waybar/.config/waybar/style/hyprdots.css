@@ -78,6 +78,11 @@ tooltip {
 }
 
 /* ───────── Modules ───────── */
+#custom-menu,
+#group-info,
+#memory,
+#temperature,
+#custom-arrow_right,
 #custom-notification,
 #tray
 #network,
@@ -115,14 +120,14 @@ tooltip {
 #custom-rl_end,
 #custom-rr_end {
     color: @color7;
-    background: alpha(@color0, 0.7);
+    background: alpha(@color0, 0.6);
     margin: 4px 0px;
     padding: 0px 5px;
 }
 
 #idle_inhibitor {
   color: @color7;
-  background: alpha(@color0, 0.7);
+  background: alpha(@color0, 0.6);
   margin: 4px 0px;
   padding: 0px 5px;
   font-size: 12px;

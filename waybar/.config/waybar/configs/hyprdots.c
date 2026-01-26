@@ -15,7 +15,7 @@
 
 // positions generated based on config.ctl //
 
-	"modules-left": ["custom/padd","custom/l_end","custom/notification", "network", "bluetooth","custom/r_end", "custom/l_end","mpris","custom/r_end"],
+	"modules-left": ["custom/padd","custom/l_end","custom/menu", "custom/notification", "network", "bluetooth","group/info", "custom/r_end", "custom/l_end","mpris","custom/r_end"],
 
 	"modules-center": ["custom/padd","custom/l_end","idle_inhibitor","hyprland/workspaces#kanji","custom/r_end","custom/padd"],
 
@@ -26,6 +26,15 @@
 
 
 // sourced from modules based on config.ctl //
+"custom/menu": {
+	"format": "󰘳{}",
+	"exec": "echo ; echo 󱓟 app launcher",
+	"interval": 86400, // once every day
+	"tooltip": true,
+	"on-click": "pkill rofi || rofi -show drun -modi run,drun,filebrowser,window",
+	"on-click-middle": "~/.config/hypr/UserScripts/WallpaperSelect.sh",
+	"on-click-right": "~/.config/hypr/scripts/WaybarLayout.sh",
+},
 
  "custom/notification": {
             "tooltip": false,
@@ -33,6 +42,48 @@
             "on-click": "swaync-client -t -sw",
             "escape": true
         },
+
+ "group/info": {
+    "orientation": "inherit",
+    "drawer": {
+      "transition-duration": 300,
+      "transition-left-to-right": false,
+    },
+    "modules": ["custom/arrow_right", "cpu", "memory", "temperature"],
+  },
+  "custom/arrow_right": {
+    "format": "󰁙",
+    "tooltip": false,
+  },
+  "cpu": {
+    "format": "| 󰘚 {usage}󱉸",
+  },
+  "memory": {
+	"interval": 10,
+	"format": " 󰾆 {used:0.1f}G ",
+	"format-alt": "󰾆 {percentage}%",
+	"format-alt-click": "click",
+	"tooltip": true,
+	"tooltip-format": "{used:0.1f}GB/{total:0.1f}G",
+	"on-click-right": "kitty --title btop sh -c 'btop'"
+},
+
+"temperature": {
+	"interval": 10,
+	"tooltip": true,
+	"hwmon-path": [
+		"/sys/class/hwmon/hwmon6/temp1_input",
+		"/sys/class/thermal/thermal_zone0/temp"
+	],
+	//"thermal-zone": 0,
+	"critical-threshold": 82,
+	"format-critical": "{icon} {temperatureC}°C",
+	"format": "{icon} {temperatureC}°C",
+	"format-icons": [
+		"󰈸"
+	],
+	"on-click-right": "kitty --title nvtop sh -c 'nvtop'"
+},
 
 
 "mpris": {
@@ -198,7 +249,7 @@
 
     "network": {
         "tooltip": true,
-        "format-wifi": " ",
+        "format-wifi": "",
         "rotate": 0,
         "format-ethernet": "󰈀 ",
         "tooltip-format": "Network: <big><b>{essid}</b></big>\nSignal strength: <b>{signaldBm}dBm ({signalStrength}%)</b>\nFrequency: <b>{frequency}MHz</b>\nInterface: <b>{ifname}</b>\nIP: <b>{ipaddr}/{cidr}</b>\nGateway: <b>{gwaddr}</b>\nNetmask: <b>{netmask}</b>",

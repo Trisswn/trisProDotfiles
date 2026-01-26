@@ -79,6 +79,7 @@ alias windows='sudo mount -t ntfs-3g /dev/nvme0n1p3 /mnt/windows'
 alias nvim="NVIM_APPNAME=nvchad nvim"
 alias letras='sptlrx --current "bold,#DDE6F0,#56738F" --before "104,faint,italic" --after "104,faint"'
 alias wifi='nmtui'
+alias waystyle='nvim .config/waybar/style.css'
 
 # =====================
 # Manjaro Zsh Config (opcional, si quieres mantenerlo)
